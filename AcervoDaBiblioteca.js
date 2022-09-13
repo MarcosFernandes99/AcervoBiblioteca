@@ -15,9 +15,9 @@ BuscarAutor(autor)
 let ano = prompt(`Qual ano deseja buscar?`)
 BuscarAno(ano)
 
-// autor = prompt(`Qual o autor deseja procurar ?`)
-// ano = parseInt(prompt(`A partir de qual ano quer fazer a busca?`))
-// BuscarLivrosDoAno(autor, ano) FUNÇÃO INCOMPLETA
+autor = prompt(`Qual o autor deseja procurar ?`)
+ano = parseInt(prompt(`A partir de qual ano quer fazer a busca?`))
+BuscarLivrosDoAno(autor, ano)
 
 let nome = prompt(`Qual o nome do livro que deseja buscar?`)
 BuscarPeloNome(nome)
@@ -25,7 +25,7 @@ BuscarPeloNome(nome)
 let idioma = prompt(`Digite o idioma que deseja buscar!`)
 BuscarPeloIdioma(idioma)
 
-OrdenarPeloPreço()
+OrdenarPeloAno()
 
 function BuscarAutor(autorParametro) {
     let livros = []
@@ -59,20 +59,23 @@ function BuscarAno(anoParametro) {
     console.log(livros, escritor, idioma)
 }
 
-function BuscarLivrosDoAno(autorParametro, anoParametro) {
-    let livros = BuscarAutor(autorParametro)
-    console.log(livros)
-
-    let livrosSelecionados = []
+function BuscarLivrosDoAno(autorParametro, anoParametro) { 
+    let livros = []
+    let escritor = []
+    let ano = []
+    let idioma = []
     let contadorLivros = 0
 
     for (let index = 0; index <= contador; index++) {
-        if (livros[index] == titulos[index] && anos[index] > anoParametro) {
-            livrosSelecionados[index] = titulos[index]
-            contadorLivros
+        if (autorParametro == autores[index] && anos[index] > anoParametro) {
+            livros[contadorLivros] = titulos[index]
+            escritor[contadorLivros] = autores[index]
+            ano[contadorLivros] = anos[index]
+            idioma[contadorLivros] = idiomas[index]
+            contadorLivros++
         }
     }
-    console.log(livrosSelecionados)
+    console.log(livros, escritor, ano, idioma)
 }
 
 function BuscarPeloNome(nomeParametro) {
@@ -104,7 +107,7 @@ function BuscarPeloIdioma(idiomaParametro) {
     console.log(livros, escritor, ano)
 }
 
-function OrdenarPeloPreço() {
+function OrdenarPeloAno() {
     let anosAux, titulosAux, autoresAux, idiomasAux
     for (let atual = 0; atual <= contador - 1; atual++) {
         for (let seguinte = atual + 1; seguinte <= contador; seguinte++) {

@@ -12,36 +12,30 @@ console.log(idiomas)
 let autor = prompt(`Qual o autor deseja procurar ?`)
 BuscarAutor(autor)
 
-let ano = prompt(`Qual ano deseja buscar?`)
-BuscarAno(ano)
+// let ano = prompt(`Qual ano deseja buscar?`)
+// BuscarAno(ano)
 
-autor = prompt(`Qual o autor deseja procurar ?`)
-ano = parseInt(prompt(`A partir de qual ano quer fazer a busca?`))
-BuscarLivrosDoAno(autor, ano)
+// autor = prompt(`Qual o autor deseja procurar ?`)
+// ano = parseInt(prompt(`A partir de qual ano quer fazer a busca?`))
+// BuscarLivrosDoAno(autor, ano)
 
-let nome = prompt(`Qual o nome do livro que deseja buscar?`)
-BuscarPeloNome(nome)
+// let nome = prompt(`Qual o nome do livro que deseja buscar?`)
+// BuscarPeloNome(nome)
 
-let idioma = prompt(`Digite o idioma que deseja buscar!`)
-BuscarPeloIdioma(idioma)
+// let idioma = prompt(`Digite o idioma que deseja buscar!`)
+// BuscarPeloIdioma(idioma)
 
-OrdenarPeloAno()
+// OrdenarPeloAno()
 
-function BuscarAutor(autorParametro) {
-    let livros = []
-    let ano = []
-    let idioma = []
-    let contadorLivros = 0
-    for (let index = 0; index <= contador; index++) {
-        if (autorParametro == autores[index]) {
-            livros[contadorLivros] = titulos[index]
-            ano[contadorLivros] = anos[index]
-            idioma[contadorLivros] = idiomas[index]
-            contadorLivros++
-        }
+function BuscarAutor(autorParametro) {    
+    let posicao = autores.indexOf(autorParametro)  
+        console.log(titulos[posicao])
+        console.log(autores[posicao])
+        console.log(anos[posicao])
+        console.log(idiomas[posicao])      
+       
+
     }
-    console.log(livros, ano, idioma)
-}
 
 function BuscarAno(anoParametro) {
     let livros = []
